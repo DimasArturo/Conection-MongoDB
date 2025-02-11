@@ -120,5 +120,13 @@ userRoutes.post('/update', verificaToken, async (req: any, res: Response) => {
     }
 });
 
+userRoutes.get('/', [verificaToken], (req: any, res: Response) => {
+    const usuario = req.usuario;
+    res.json({
+        ok: true,
+        usuario
+    });
+});
+
 
 export default userRoutes;
